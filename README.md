@@ -10,6 +10,16 @@ git clone https://github.com/XavierJiezou/flask-algorithm-deploy.git
 cd flask-algorithm-deploy
 python app.py
 ```
+# Algorithm
+```
+y = ax + b
+```
+Input `x` and output `y`. The value of `a` or `b` also can be changed by modifying [config.yaml](config.yaml):
+```yaml
+params:
+  a: 1
+  b: 1
+```
 # Demo
 ```
 http://127.0.0.1:5000/
@@ -23,6 +33,10 @@ http://127.0.0.1:5000/api/1/
 http://127.0.0.1:5000/api/1,2,3/
 ```
 ![](img/api_multi.png)
+# Request
+```
+python req.py
+```
 # Reference
 - flask: [https://github.com/pallets/flask](https://github.com/pallets/flask)
 - watchdog: [https://github.com/gorakhargosh/watchdog](https://github.com/gorakhargosh/watchdog)
