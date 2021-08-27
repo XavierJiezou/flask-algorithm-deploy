@@ -16,7 +16,6 @@ http://127.0.0.1:5000/
 ```
 ![](img/index.png)
 ```
-- 
 http://127.0.0.1:5000/api/1/
 ```
 ![](img/api_single.png)
