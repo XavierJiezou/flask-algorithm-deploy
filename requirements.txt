@@ -1,0 +1,5 @@
+Flask==1.0
+watchdog==2.1.5
+requests==2.21.0
+waitress==2.0.0
+PyYAML==5.4.1
