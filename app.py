@@ -51,12 +51,15 @@ def api(x: str, path: str = 'config.yaml') -> jsonify:
 
     # Data
     r = {"r": []}
-    x = x.split(",")
-    for i in x:
-        if i != "":
-            r["r"].append({"x": float(i), "y": func(i)})
-        else:
-            pass
+    x = x.split(",")# min(len(x), int(1e4))
+    with cf.ThreadPoolExecutor(len(x)) as p:
+        def temp(i):
+            if i != "":
+                r["r"].append({"x": float(i), "y": func(i)})
+            else:
+                pass
+        for i in x:
+            p.submit(temp, i)
     # Data
     return jsonify(r)
 
@@ -76,7 +79,7 @@ def main():
     observer.start()
     try:
         while True:
-            waitress.serve(app, host="127.0.0.1", port=5000)
+            waitress.serve(app, host="172.18.2.132", port=5000)
     finally:
         observer.stop()
         observer.join()
