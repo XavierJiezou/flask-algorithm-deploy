@@ -51,7 +51,7 @@ def api(x: str, path: str = 'config.yaml') -> jsonify:
 
     # Data
     r = {"r": []}
-    x = x.split(",")# min(len(x), int(1e4))
+    x = x.split(",")
     with cf.ThreadPoolExecutor(len(x)) as p:
         def temp(i):
             if i != "":
