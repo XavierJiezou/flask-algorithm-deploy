@@ -78,8 +78,7 @@ def main():
     observer.schedule(event_handler, path, recursive=True)
     observer.start()
     try:
-        while True:
-            waitress.serve(app, host="127.0.0.1", port=5000)
+        waitress.serve(app, host="127.0.0.1", port=5000)
     finally:
         observer.stop()
         observer.join()

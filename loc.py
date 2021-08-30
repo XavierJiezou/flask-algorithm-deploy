@@ -8,7 +8,7 @@ class QuickstartUser(HttpUser):
     @task
     def hello_world(self):
         self.client.get('api/1/')
-        self.client.post()
+        self.client.post('api/1/')
 
 
 if __name__ == '__main__':
